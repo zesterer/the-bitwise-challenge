@@ -2,7 +2,7 @@
 
 ## The Concept
 
-There is **one rule*: the core game logic is allowed to persist *no more* than 64 bits of data between frames.
+There is **one rule*: the core game logic is allowed to persist *no more* than 64 bits (8 bytes) of data between frames.
 
 ## Additional Details
 
