@@ -1,6 +1,6 @@
 # The Bitwise Gamedev Challenge
 
-## The concept
+## The Concept
 
 There is **one rule*: the core game logic is allowed to persist *no more* than 64 bits of data between frames.
 
@@ -22,6 +22,11 @@ No statics, global values, IO (beyond that which falls within the aforementioned
 as artifically inducing lag to change the frame time delta), or other unprincipled 'tricks' are permitted: it should
 be entirely possible to recreate the *entire* state of the game at any given frame given only the 64-bit integer and
 the code that composes the game logic.
+
+## Suggested Formats
+
+The Bitwise Challenge can be taken both as an individual endeavour, or as a group activity/competition such as a
+game jam or hackathon.
 
 ## Exceptions
 
