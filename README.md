@@ -10,7 +10,7 @@ In effect, your game should be a pure function with the following inputs:
 
 - the 64 bit integer emitted by the last frame (you may provide a default value for the first frame)
 
-- player inputs (keyboard/mouse/controller/etc.) & other environmental information (time delta since the last frame)
+- player inputs (keyboard/mouse/controller/etc.) & other environmental information (time delta since the last frame, etc.)
 
 and the following outputs:
 
@@ -19,7 +19,7 @@ and the following outputs:
 - UI/graphics in some stateless form, such as a framebuffer or sound waveforms
 
 No statics, global values, IO (beyond that which falls within the aforementioned category), side-channel state (such
-as artifically inducing lag to change the frame time delta), or other unprincipled 'tricks' are permitted: it should
+as inducing lag to use the frame time delta as extra state), or other unprincipled 'tricks' are permitted: it should
 be entirely possible to recreate the *entire* state of the game at any given frame given only the 64-bit integer and
 the code that composes the game logic.
 
