@@ -2,7 +2,7 @@
 
 ## The Concept
 
-There is **one rule*: the core game logic is allowed to persist *no more* than 64 bits (8 bytes) of data between frames.
+There is *one rule*: the core game logic is allowed to persist *no more* than 64 bits (8 bytes) of data between frames.
 
 ## Additional Details
 
@@ -45,3 +45,8 @@ An example of such a memoization cache is the [`cached`](https://en.wikipedia.or
 ## Showcases
 
 *No known examples currently exist*
+
+## Inspiration
+
+The idea was partially inspired by
+[this blog post](https://www.andreinc.net/2022/05/01/4-integers-are-enough-to-write-a-snake-game) by @nomemory.
