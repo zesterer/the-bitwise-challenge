@@ -36,7 +36,7 @@ using the cache is indistinguishable from recomputing the cached function on the
 You may use such caches for the sake of performance (procedurally generating a game world from a seed on every frame
 would, understandably, be prohibitely expensive).
 
-An example of such a memoization cache is the [`cached`](https://en.wikipedia.org/wiki/Memoization) Rust crate.
+An example of such a memoization cache is the [`cached`](https://crates.io/crates/cached) Rust crate.
 
 ## Variations
 
