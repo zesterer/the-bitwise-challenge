@@ -44,7 +44,10 @@ An example of such a memoization cache is the [`cached`](https://crates.io/crate
 
 ## Showcases
 
-- [Snake in 8 bytes](https://github.com/zesterer/bitwise-examples#bitwise-snake) (part of my example games)
+- `@izabera`: ['2048' in 64 bits](https://github.com/izabera/bitwise-challenge-2048)
+- `@zesterer`: [Snake in 8 bytes](https://github.com/zesterer/bitwise-examples#bitwise-snake) (part of my example games)
+
+*If you want your entry added to the list, open an issue!*
 
 ## Inspiration
 
