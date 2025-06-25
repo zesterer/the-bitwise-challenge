@@ -2,7 +2,8 @@
 
 ## The Concept
 
-There is *one rule*: the core game logic is allowed to persist *no more* than 64 bits (8 bytes) of data between frames.
+There is *one rule*: the core game logic is allowed to persist *no more* than 64 bits (8 bytes) of data between
+frames/ticks.
 
 ## Additional Details
 
@@ -12,29 +13,50 @@ In effect, your game should be a pure function with the following inputs:
 
 - player inputs (keyboard/mouse/controller/etc.) & other environmental information (time delta since the last frame, etc.)
 
+- Random number generation, provided the state of the RNG is not relied upon for gameplay (i.e: it should be possible to
+  reseed the RNG from true random sources every frame without changing the nature of the gameplay)
+
 and the following outputs:
 
 - a 64-bit integer that will be persisted to the next frame
 
-- UI/graphics in some stateless form, such as a framebuffer or sound waveforms
+- UI/graphics/other outputs in some stateless form, such as a framebuffer or sound waveforms
 
-No statics, global values, IO (beyond that which falls within the aforementioned category), side-channel state (such
+No statics, global values, IO (beyond that which falls within the aforementioned categories), side-channel state (such
 as inducing lag to use the frame time delta as extra state), or other unprincipled 'tricks' are permitted: it should
-be entirely possible to recreate the *entire* state of the game at any given frame given only the 64-bit integer and
-the code that composes the game logic.
+be possible to recreate the *entire* state of the game at any given frame given only the 64-bit integer and the code
+that composes the game logic.
+
+## Why 64 bits?
+
+Based on personal experimentation, I've found 64 bits to be the perfect middle-ground that keeps the challenge engaging and
+forces creativity, while also not forbidding a lot of different potential game genres.
+
+## Ambiguities
+
+Some games do not have a strict definition of 'frames' or 'ticks'.
+
+For example, a text adventure game might accept many characters of input, but only act on them once the 'return' key
+is pressed. Does this mean that the game has to store the partially-complete string within its 64-bit state? There is
+no right answer.
+
+My suggestion would be to decide beforehand where your dividing line is between the 'input system' and the 'core game',
+and then respect the rules of the challenge within that core. For example, you might decide that an entire command to
+the text adventure game counts as a single atomic input, and hence need not count toward the stored state of the game.
 
 ## Suggested Formats
 
 The Bitwise Challenge can be taken both as an individual endeavour, or as a group activity/competition such as a
 game jam or hackathon.
 
-## Exceptions
+## Pure caches
 
 An exception is made for [memoization caches](https://en.wikipedia.org/wiki/Memoization), provided the result of
-using the cache is indistinguishable from recomputing the cached function on the input every time.
+using the cache is indistinguishable from recomputing the cached function on the input every time (you can't, for
+example, rely on whether a value was present in the cache for some behaviour of the game logic).
 
-You may use such caches for the sake of performance (procedurally generating a game world from a seed on every frame
-would, understandably, be prohibitely expensive).
+You may use such caches for the sake of performance. For example, procedurally generating a game world from a seed on
+every frame would, understandably, be prohibitely expensive.
 
 An example of such a memoization cache is the [`cached`](https://crates.io/crates/cached) Rust crate.
 
