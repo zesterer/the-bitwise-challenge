@@ -70,6 +70,10 @@ An example of such a memoization cache is the [`cached`](https://crates.io/crate
 - `@toombs-caeman`: [Wordle in 64 bits](https://github.com/toombs-caeman/wordle)
 - `@toombs-caeman`: [Conway's Game of Life in 64 bits](https://github.com/toombs-caeman/gol64/)
 - `@zesterer`: [Snake in 8 bytes](https://github.com/zesterer/bitwise-examples#bitwise-snake) (part of my example games)
+- `@Garklein`: [Connect 4 in 64 bits](https://github.com/Garklein/connect-6-4)
+- `@maksverver`: [Typer 64, a typing game in 64 bits](https://maksverver.github.io/typer-64/)
+- `@toombs-caeman`: [Maze64, a maze solving game in 64 bits](https://github.com/toombs-caeman/maze64)
+- `@sam-mccall`: [Shlurdle: A sliding windows word game similar to Absurdle](https://github.com/sam-mccall/sam-mccall.github.io/tree/main/shlurdle)
 
 *If you want your entry added to the list, open an issue!*
 
